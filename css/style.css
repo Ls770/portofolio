@@ -1,0 +1,409 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+/* ========== 1. DASAR ========== */
+:root {
+  --bg: #171427;
+  --panel: #231e39;
+  --panel-dark: #100d1c;
+  --text: #f5f1ff;
+  --muted: #bcb4d4;
+  --purple: #b79aff;
+  --lime: #d1ff70;
+  --border: #51456e;
+  --pixel-font: "Press Start 2P", monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Courier New", monospace;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+::selection {
+  background: var(--lime);
+  color: var(--bg);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--lime);
+}
+
+a:focus-visible {
+  outline: 3px dashed var(--lime);
+  outline-offset: 6px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ========== 2. HEADER ========== */
+.header {
+  background: var(--panel-dark);
+  border-bottom: 4px solid var(--border);
+}
+
+.header-isi {
+  min-height: 84px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.logo {
+  color: var(--text);
+  font-family: var(--pixel-font);
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--lime);
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+}
+
+.nav a {
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: var(--lime);
+}
+
+/* ========== 3. HERO ========== */
+.hero {
+  padding: 90px 0;
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(#b79aff0a 1px, transparent 1px),
+    linear-gradient(90deg, #b79aff0a 1px, transparent 1px);
+  background-size: 32px 32px;
+  border-bottom: 4px solid var(--border);
+}
+
+.hero-isi {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+
+.hero-teks {
+  flex: 1;
+  min-width: 0;
+}
+
+.sapaan {
+  margin-bottom: 20px;
+  color: var(--lime);
+  font-family: var(--pixel-font);
+  font-size: 12px;
+}
+
+.sapaan::before {
+  content: "> ";
+}
+
+.hero h1 {
+  margin-bottom: 24px;
+  font-family: var(--pixel-font);
+  font-size: clamp(24px, 3.5vw, 38px);
+  line-height: 1.6;
+  text-shadow: 4px 4px 0 #6744a3;
+}
+
+.peran {
+  margin-bottom: 16px;
+  color: var(--purple);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.hero-teks > p:last-of-type {
+  max-width: 520px;
+  color: var(--muted);
+}
+
+.hero-foto {
+  width: 280px;
+  height: 280px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border: 6px solid var(--purple);
+  border-radius: 0;
+  background: var(--panel);
+  box-shadow:
+    8px 8px 0 var(--panel-dark),
+    12px 12px 0 var(--lime);
+}
+
+/* ========== 4. TOMBOL ========== */
+.tombol {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 18px 22px;
+  background: var(--lime);
+  color: var(--panel-dark);
+  border: 3px solid var(--panel-dark);
+  border-radius: 0;
+  box-shadow: 5px 5px 0 var(--purple);
+  font-family: var(--pixel-font);
+  font-size: 10px;
+  line-height: 1.8;
+  text-decoration: none;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.tombol:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--purple);
+}
+
+.tombol:active {
+  transform: translate(5px, 5px);
+  box-shadow: none;
+}
+
+/* ========== 5. TENTANG & KEAHLIAN ========== */
+.bagian {
+  padding: 76px 0;
+}
+
+.bagian h2 {
+  margin-bottom: 28px;
+  color: var(--purple);
+  font-family: var(--pixel-font);
+  font-size: 21px;
+  line-height: 1.8;
+}
+
+.bagian h2::before {
+  content: "# ";
+  color: var(--lime);
+}
+
+#tentang .container > p {
+  max-width: 760px;
+  color: var(--muted);
+}
+
+.judul-kecil {
+  margin: 32px 0 18px;
+  font-family: var(--pixel-font);
+  font-size: 12px;
+}
+
+.keahlian {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  list-style: none;
+}
+
+.keahlian li {
+  padding: 8px 16px;
+  background: var(--panel);
+  color: var(--lime);
+  border: 2px solid var(--border);
+  border-radius: 0;
+  box-shadow: 3px 3px 0 var(--panel-dark);
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* ========== 6. PROYEK ========== */
+.bagian-abu {
+  background: var(--panel-dark);
+  border-top: 4px solid var(--border);
+  border-bottom: 4px solid var(--border);
+}
+
+.daftar-proyek {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.kartu {
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border: 3px solid var(--border);
+  border-radius: 0;
+  box-shadow: 6px 6px 0 #08060f;
+  transition: transform 0.15s, border-color 0.15s;
+}
+
+.kartu:hover {
+  transform: translateY(-6px);
+  border-color: var(--purple);
+}
+
+.kartu > img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-bottom: 3px solid var(--border);
+}
+
+.kartu-isi {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+}
+
+.kartu-isi h3 {
+  margin-bottom: 16px;
+  font-family: var(--pixel-font);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.kartu-isi p {
+  margin-bottom: 22px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.kartu-isi a {
+  margin-top: auto;
+  color: var(--lime);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.kartu-isi a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+/* ========== 7. KONTAK & FOOTER ========== */
+.kontak {
+  text-align: center;
+}
+
+.kontak > p {
+  color: var(--muted);
+}
+
+.sosmed {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.sosmed a {
+  color: var(--purple);
+  text-underline-offset: 5px;
+}
+
+.sosmed a:hover {
+  color: var(--lime);
+}
+
+.footer {
+  padding: 28px 24px;
+  background: var(--panel-dark);
+  color: var(--muted);
+  border-top: 4px solid var(--border);
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ========== 8. RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .header-isi {
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    gap: 18px;
+  }
+
+  .nav {
+    gap: 24px;
+  }
+
+  .hero {
+    padding: 56px 0;
+  }
+
+  .hero-isi {
+    flex-direction: column-reverse;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero-foto {
+    width: 210px;
+    height: 210px;
+  }
+
+  .peran {
+    font-size: 19px;
+  }
+
+  .bagian {
+    padding: 52px 0;
+  }
+
+  .bagian h2 {
+    font-size: 17px;
+  }
+
+  .daftar-proyek {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .tombol,
+  .kartu {
+    transition: none;
+  }
+
+  .tombol:hover,
+  .tombol:active,
+  .kartu:hover {
+    transform: none;
+  }
+}
