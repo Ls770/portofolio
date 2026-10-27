@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -5,13 +6,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Louis Leonard TJ | Portofolio</title>
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .detail-page {
+      display: none;
+      min-height: 65vh;
+      padding: 70px 0;
+    }
+
+    .detail-page:target {
+      display: block;
+    }
+
+    body:has(.detail-page:target) .main-content,
+    body:has(.detail-page:target) .footer {
+      display: none;
+    }
+
+    .detail-box {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 32px;
+      border-radius: 18px;
+      background: white;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+    }
+
+    .detail-box h2 {
+      margin-bottom: 18px;
+    }
+
+    .detail-box p,
+    .detail-box li {
+      line-height: 1.8;
+    }
+
+    .detail-box ul {
+      padding-left: 22px;
+      margin: 16px 0 24px;
+    }
+
+    .detail-back {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+    }
+
+    .kartu-aksi {
+      display: inline-block;
+      margin-top: 12px;
+      font-weight: bold;
+    }
+
+    .foto-prestasi,
+    .foto-turtle {
+      display: block;
+      width: 100%;
+      max-width: 620px;
+      height: auto;
+      margin: 24px auto;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+  </style>
 </head>
+
 <body>
 
   <!-- HEADER -->
   <header class="header">
     <div class="container header-isi">
-      <a href="#" class="logo">Louis Leonard TJ<span>.</span></a>
+      <a href="#beranda" class="logo">
+        Louis Leonard TJ<span>.</span>
+      </a>
+
       <nav class="nav">
         <a href="#tentang">Tentang</a>
         <a href="#proyek">Proyek</a>
@@ -20,94 +88,261 @@
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-isi">
-      <div class="hero-teks">
-        <p class="sapaan">Halo, saya</p>
-        <h1>Louis Leonard TJ</h1>
-        <p class="peran">Web Developer Pemula</p>
-        <p>Saya suka membuat website yang rapi, ringan, dan mudah dipakai.</p>
-        <a href="#proyek" class="tombol">Lihat Proyek Saya</a>
-      </div>
-      <img src="img/Screenshot_18-10-2026_182347_www.instagram.com.jpeg" alt="Foto Dimas Pratama" class="hero-foto">
-    </div>
-  </section>
+  <main class="main-content" id="beranda">
 
-  <!-- TENTANG -->
-  <section id="tentang" class="bagian">
-    <div class="container">
-      <h2>Tentang Saya</h2>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-isi">
+        <div class="hero-teks">
+          <p class="sapaan">Halo, saya</p>
+          <h1>Louis Leonard TJ</h1>
+          <p class="peran">Web Developer Pemula</p>
+          <p>
+            Saya suka membuat website yang rapi,
+            ringan, dan mudah dipakai.
+          </p>
+          <a href="#proyek" class="tombol">
+            Lihat Proyek Saya
+          </a>
+        </div>
+
+        <img
+          src="img/Screenshot_18-10-2026_182347_www.instagram.com.jpeg"
+          alt="Foto Louis Leonard TJ"
+          class="hero-foto"
+        >
+      </div>
+    </section>
+
+    <!-- TENTANG -->
+    <section id="tentang" class="bagian">
+      <div class="container">
+        <h2>Tentang Saya</h2>
+
+        <p>
+          Saya sedang belajar web development sejak awal tahun ini.
+          Saya senang mengubah ide menjadi halaman website yang nyata,
+          lalu memperbaikinya sedikit demi sedikit.
+        </p>
+
+        <h3 class="judul-kecil">Keahlian</h3>
+
+        <ul class="keahlian">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Desain Responsif</li>
+          <li>Git &amp; GitHub</li>
+          <li>Basket</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROYEK -->
+    <section id="proyek" class="bagian bagian-abu">
+      <div class="container">
+        <h2>Proyek Saya</h2>
+
+        <div class="daftar-proyek">
+
+          <!-- TURTLE RACE -->
+          <div class="kartu">
+            <img
+              src="img/OIP.webp"
+              alt="Tampilan website Turtle Race"
+            >
+
+            <div class="kartu-isi">
+              <h3>Turtle Race</h3>
+              <p>Game balap kura-kura dengan sistem tebakan warna.</p>
+              <a href="#detail-turtle" class="kartu-aksi">
+                Lihat detail &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- CATATAN BELAJAR -->
+          <div class="kartu">
+            <img
+              src="img/OIP (2).webp"
+              alt="Tampilan website Catatan Belajar"
+            >
+
+            <div class="kartu-isi">
+              <h3>Catatan Belajar</h3>
+              <p>
+                Kumpulan ringkasan materi HTML dan CSS
+                yang saya pelajari.
+              </p>
+              <a href="#detail-catatan" class="kartu-aksi">
+                Lihat detail &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- BASKET -->
+          <div class="kartu">
+            <img
+              src="img/OIP (1).webp"
+              alt="Tampilan website Basket"
+            >
+
+            <div class="kartu-isi">
+              <h3>Basket</h3>
+              <p>Prestasi saya dalam lomba basket.</p>
+              <a href="#detail-basket" class="kartu-aksi">
+                Lihat detail &rarr;
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section id="kontak" class="bagian">
+      <div class="container kontak">
+        <h2>Ayo Kerja Sama</h2>
+        <p>
+          Punya ide website? Kirim pesan,
+          saya akan membalas secepatnya.
+        </p>
+
+        <a href="mailto:marmutmarmut72@gmail.com" class="tombol">
+          Kirim Email
+        </a>
+
+        <p class="sosmed">
+          <a href="#">GitHub</a> ·
+          <a href="#">LinkedIn</a> ·
+          <a href="#">Instagram</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- DETAIL TURTLE RACE -->
+  <section id="detail-turtle" class="detail-page">
+    <div class="container detail-box">
+
+      <h2>Detail Proyek: Turtle Race</h2>
+
+      <img
+        src="img/gamekura.png"
+        alt="Screenshot game Turtle Race dengan enam pilihan warna dan lintasan balapan"
+        class="foto-turtle"
+      >
+
+      <h3>Game Balap Kura-Kura</h3>
+
       <p>
-        Saya sedang belajar web development sejak awal tahun ini.
-        Saya senang mengubah ide menjadi halaman website yang nyata,
-        lalu memperbaikinya sedikit demi sedikit.
+        Turtle Race adalah game balap kura-kura yang
+        memungkinkan pemain menebak warna kura-kura
+        yang akan menjadi pemenang.
       </p>
-      <h3 class="judul-kecil">Keahlian</h3>
-      <ul class="keahlian">
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Desain Responsif</li>
-        <li>Git &amp; GitHub</li>
-        <li>Figma</li>
+
+      <p>
+        Game ini memiliki enam pilihan warna:
+        merah, oranye, kuning, hijau, biru, dan ungu.
+        Pemain memilih warna yang diprediksi akan menang
+        sebelum balapan dimulai.
+      </p>
+
+      <p>
+        Setelah balapan selesai, game menampilkan
+        kura-kura pemenang dan memberi tahu apakah
+        tebakan pemain benar atau belum tepat.
+        Pemain dapat menekan tombol spasi untuk
+        memulai balapan berikutnya.
+      </p>
+
+      <h3>Fitur Game</h3>
+
+      <ul>
+        <li>Enam pilihan warna kura-kura.</li>
+        <li>Sistem menebak pemenang balapan.</li>
+        <li>Lintasan dengan garis start dan finish.</li>
+        <li>Hasil balapan dan status tebakan pemain.</li>
+        <li>Tombol spasi untuk balapan berikutnya.</li>
       </ul>
+
+      <a href="#proyek" class="tombol detail-back">
+        &larr; Kembali ke Proyek
+      </a>
+
     </div>
   </section>
 
-  <!-- PROYEK -->
-  <section id="proyek" class="bagian bagian-abu">
-    <div class="container">
-      <h2>Proyek Saya</h2>
-      <div class="daftar-proyek">
+  <!-- DETAIL CATATAN BELAJAR -->
+  <section id="detail-catatan" class="detail-page">
+    <div class="container detail-box">
 
-        <div class="kartu">
-          <img src="img/OIP.webp" alt="Tampilan website Turtle Race">
-          <div class="kartu-isi">
-            <h3>Turtle Race</h3>
-            <p>Website profil tentang game balap kura kura.</p>
-            <a href="#">Lihat proyek &rarr;</a>
-          </div>
-        </div>
+      <h2>Detail Proyek: Catatan Belajar</h2>
 
-        <div class="kartu">
-          <img src="img/OIP (2).webp" alt="Tampilan website Catatan Belajar">
-          <div class="kartu-isi">
-            <h3>Catatan Belajar</h3>
-            <p>Kumpulan ringkasan materi HTML dan CSS yang saya pelajari.</p>
-            <a href="#">Lihat proyek &rarr;</a>
-          </div>
-        </div>
-
-        <div class="kartu">
-          <img src="img/OIP (1).webp" alt="Tampilan website Basket">
-          <div class="kartu-isi">
-            <h3>Basket</h3>
-            <p>Landing page sederhana untuk Basket.</p>
-            <a href="#">Lihat proyek &rarr;</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- KONTAK -->
-  <section id="kontak" class="bagian">
-    <div class="container kontak">
-      <h2>Ayo Kerja Sama</h2>
-      <p>Punya ide website? Kirim pesan, saya akan membalas secepatnya.</p>
-      <a href="mailto:dimas@example.com" class="tombol">Kirim Email</a>
-      <p class="sosmed">
-        <a href="#">GitHub</a> ·
-        <a href="#">LinkedIn</a> ·
-        <a href="#">Instagram</a> 
+      <p>
+        Catatan Belajar adalah proyek untuk menyimpan
+        ringkasan materi HTML dan CSS yang sedang saya pelajari.
       </p>
+
+      <ul>
+        <li>Merangkum tag HTML yang sering digunakan.</li>
+        <li>Mencatat properti CSS dan penggunaannya.</li>
+        <li>Membantu mengulang materi pemrograman web.</li>
+      </ul>
+
+      <a href="#proyek" class="tombol detail-back">
+        &larr; Kembali ke Proyek
+      </a>
+
+    </div>
+  </section>
+
+  <!-- DETAIL PRESTASI BASKET -->
+  <section id="detail-basket" class="detail-page">
+    <div class="container detail-box">
+
+      <h2>Prestasi Basket Saya</h2>
+
+      <img
+        src="img/plc.jpeg"
+        alt="Foto Louis Leonard TJ dengan trofi dan sertifikat prestasi basket"
+        class="foto-prestasi"
+      >
+
+      <h3>Juara 2 Lomba PLC BPK PENABUR</h3>
+
+      <p>
+        Saya berhasil meraih Juara 2 dalam lomba basket
+        PLC BPK PENABUR. Prestasi ini menjadi pengalaman
+        yang membanggakan bagi saya.
+      </p>
+
+      <p>
+        Melalui kompetisi ini, saya belajar tentang kerja
+        sama tim, disiplin, semangat berlatih, dan pentingnya
+        berusaha memberikan yang terbaik dalam setiap pertandingan.
+      </p>
+
+      <ul>
+        <li>Kompetisi: PLC BPK PENABUR</li>
+        <li>Cabang olahraga: Basket</li>
+        <li>Pencapaian: Juara 2</li>
+      </ul>
+
+      <a href="#proyek" class="tombol detail-back">
+        &larr; Kembali ke Proyek
+      </a>
+
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p>&copy; 2026 Louis Leonard Tj. Dibuat dengan HTML dan CSS.</p>
+    <p>
+      &copy; 2026 Louis Leonard TJ.
+      Dibuat dengan HTML dan CSS.
+    </p>
   </footer>
 
 </body>
